@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; padding: 20px; color: #2c3e50; line-height: 1.5; }
+    .title { color: #8e44ad; font-size: 26px; border-bottom: 2px solid #9b59b6; padding-bottom: 5px; margin-bottom: 25px; }
+    
+    /* Основная таблица для всего примера */
+    .math-row { 
+        border-collapse: collapse; 
+        margin: 20px 0; 
+        background: #fdfbff; 
+        border-radius: 10px; 
+        border: 1px solid #efecf5;
+    }
+    
+    /* Ячейки знаков и дробей */
+    .math-row > tbody > tr > td { 
+        padding: 10px 15px; 
+        vertical-align: middle; 
+        text-align: center; 
+        font-size: 24px; 
+        font-weight: bold;
+    }
+
+    /* Внутренняя таблица для самой дроби */
+    .frac-table { 
+        display: inline-table; 
+        vertical-align: middle; 
+        border-collapse: collapse; 
+    }
+    .frac-table td { 
+        padding: 0 5px; 
+        text-align: center; 
+        font-size: 22px; 
+    }
+    .num { border-bottom: 3px solid #2c3e50; }
+    .den { padding-top: 3px; }
+
+    .label { font-size: 18px; color: #8e44ad; margin-bottom: 5px; font-weight: bold; }
+    b { color: #8e44ad; }
+</style>
+</head>
+<body>
+    <div class="title">Обыкновенные дроби</div>
+
+    <!-- Пример СЛОЖЕНИЯ -->
+    <div class="label">1. Сложение (одинаковые знаменатели):</div>
+    <table class="math-row">
+        <tr>
+            <td><table class="frac-table"><tr><td class="num">a</td></tr><tr><td class="den">c</td></tr></table></td>
+            <td>+</td>
+            <td><table class="frac-table"><tr><td class="num">b</td></tr><tr><td class="den">c</td></tr></table></td>
+            <td>=</td>
+            <td><table class="frac-table"><tr><td class="num">a + b</td></tr><tr><td class="den">c</td></tr></table></td>
+        </tr>
+    </table>
+
+    <!-- Пример УМНОЖЕНИЯ -->
+    <div class="label">2. Умножение:</div>
+    <table class="math-row">
+        <tr>
+            <td><table class="frac-table"><tr><td class="num">a</td></tr><tr><td class="den">b</td></tr></table></td>
+            <td>×</td>
+            <td><table class="frac-table"><tr><td class="num">c</td></tr><tr><td class="den">d</td></tr></table></td>
+            <td>=</td>
+            <td><table class="frac-table"><tr><td class="num">a × c</td></tr><tr><td class="den">b × d</td></tr></table></td>
+        </tr>
+    </table>
+
+    <!-- Пример ДЕЛЕНИЯ -->
+    <div class="label">3. Деление:</div>
+    <table class="math-row">
+        <tr>
+            <td><table class="frac-table"><tr><td class="num">a</td></tr><tr><td class="den">b</td></tr></table></td>
+            <td>:</td>
+            <td><table class="frac-table"><tr><td class="num">c</td></tr><tr><td class="den">d</td></tr></table></td>
+            <td>=</td>
+            <td><table class="frac-table"><tr><td class="num">a × d</td></tr><tr><td class="den">b × c</td></tr></table></td>
+        </tr>
+    </table>
+
+    <p style="color: #7f8c8d; font-size: 14px; margin-top: 20px;">
+        <i>* Подсказка: При делении результат получается путём умножения первой дроби на "перевёрнутую" вторую.</i>
+    </p>
+</body>

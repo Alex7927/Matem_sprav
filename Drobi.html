@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; padding: 20px; line-height: 1.6; color: #2c3e50; background-color: #fdfdfd; }
+    .title { color: #d35400; font-size: 28px; border-left: 8px solid #e67e22; padding-left: 15px; margin-bottom: 20px; }
+    
+    .section-title { color: #2980b9; font-size: 20px; margin-top: 25px; border-bottom: 1px solid #d6eaf8; padding-bottom: 5px; }
+    
+    .example-box { 
+        background: #fdf2e9; 
+        border-radius: 12px; 
+        padding: 15px; 
+        text-align: center; 
+        margin: 15px 0; 
+        font-size: 22px;
+        color: #d35400;
+        font-weight: bold;
+        border: 1px solid #fab1a0;
+    }
+    
+    .rule { background-color: #fef9e7; border-radius: 8px; padding: 12px; border-left: 4px solid #f1c40f; margin: 10px 0; font-size: 15px; }
+    .comma { color: #e74c3c; font-weight: bold; font-size: 26px; }
+    b { color: #d35400; }
+    
+    .step { font-weight: bold; color: #2980b9; }
+</style>
+</head>
+<body>
+    <div class="title">Десятичные дроби</div>
+
+    <p>Это дроби, знаменатель которых кратен десяти. Вместо дробной черты используется <b class="comma">,</b> (запятая).</p>
+
+    <!-- Сложение и вычитание -->
+    <div class="section-title">1. Сложение и вычитание</div>
+    <div class="rule">Самое важное правило: записываем числа так, чтобы <b>запятая была под запятой</b>.</div>
+    <div class="example-box">
+        12<span class="comma">,</span>45 + 3<span class="comma">,</span>8 = 16<span class="comma">,</span>25
+    </div>
+
+    <!-- Умножение -->
+    <div class="section-title">2. Умножение</div>
+    <div class="rule">
+        <span class="step">Шаг 1:</span> Умножаем числа, не глядя на запятые.<br>
+        <span class="step">Шаг 2:</span> В ответе отделяем запятой столько знаков, сколько их было <b>в сумме</b> у обоих чисел.
+    </div>
+    <div class="example-box">
+        0<span class="comma">,</span>2 × 0<span class="comma">,</span>3 = 0<span class="comma">,</span>06
+    </div>
+
+    <!-- Деление -->
+    <div class="section-title">3. Деление на десятичную дробь</div>
+    <div class="rule">
+        Чтобы разделить на десятичную дробь, нужно перенести запятую вправо <b>в делителе и делимом</b> на столько знаков, чтобы делитель стал целым числом.
+    </div>
+    <div class="example-box" style="background: #ebf5fb; border-color: #3498db; color: #2980b9;">
+        2<span class="comma">,</span>5 : 0<span class="comma">,</span>5  ⟶  25 : 5 = 5
+    </div>
+
+    <p style="color: #7f8c8d; font-size: 14px; margin-top: 30px;">
+        <i>* Подсказка: Любое целое число можно записать как десятичную дробь, добавив запятую и ноль (например, 5 = 5,0).</i>
+    </p>
+</body>
+</html>

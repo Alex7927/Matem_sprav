@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; padding: 20px; line-height: 1.6; color: #2c3e50; background-color: #fdfdfd; }
+    .title { color: #2980b9; font-size: 28px; border-left: 8px solid #3498db; padding-left: 15px; margin-bottom: 20px; }
+    
+    .definition { background-color: #eaf2f8; border: 1px solid #3498db; border-radius: 10px; padding: 15px; font-style: italic; }
+    
+    .section-title { color: #16a085; font-size: 20px; margin-top: 25px; border-bottom: 1px solid #d1f2eb; padding-bottom: 5px; }
+    
+    .rule-card { 
+        background: white; 
+        border-radius: 12px; 
+        padding: 15px; 
+        margin: 15px 0; 
+        border: 1px solid #dcdde1;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .math-logic { 
+        font-family: 'Courier New', monospace; 
+        font-size: 20px; 
+        font-weight: bold; 
+        text-align: center; 
+        color: #2c3e50;
+        background: #f4f6f7;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+    
+    .negative { color: #e74c3c; font-weight: bold; }
+    .positive { color: #27ae60; font-weight: bold; }
+    
+    .sign-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 18px; }
+    .sign-table td { padding: 5px; border: 1px solid #eee; }
+</style>
+</head>
+<body>
+    <div class="title">Отрицательные числа</div>
+
+    <div class="definition">
+        <b>Отрицательные числа</b> — это числа меньше нуля. Они всегда пишутся со знаком <span class="negative">−</span> (минус).
+    </div>
+
+    <!-- Сложение и вычитание -->
+    <div class="section-title">1. Сложение и вычитание</div>
+    <div class="rule-card">
+        <p>• <b>Знаки одинаковые:</b> Складываем числа и ставим их общий знак.</p>
+        <div class="math-logic"><span class="negative">-5</span> - 3 = <span class="negative">-8</span></div>
+        
+        <p>• <b>Знаки разные:</b> Из большего вычитаем меньшее и ставим знак того, что было больше.</p>
+        <div class="math-logic"><span class="negative">-10</span> + 4 = <span class="negative">-6</span></div>
+    </div>
+
+    <!-- Умножение и деление -->
+    <div class="section-title">2. Умножение и деление</div>
+    <div class="rule-card">
+        <p>Здесь важно только количество минусов:</p>
+        <table class="sign-table">
+            <tr><td><span class="positive">(+)</span> × <span class="positive">(+)</span> = <span class="positive">(+)</span></td><td>Плюс на плюс дает <b>Плюс</b></td></tr>
+            <tr><td><span class="negative">(−)</span> × <span class="negative">(−)</span> = <span class="positive">(+)</span></td><td>Минус на минус дает <b>Плюс</b></td></tr>
+            <tr><td><span class="negative">(−)</span> × <span class="positive">(+)</span> = <span class="negative">(−)</span></td><td>Минус на плюс дает <b>Минус</b></td></tr>
+        </table>
+        
+        <div class="math-logic">
+            <span class="negative">-4</span> × 2 = <span class="negative">-8</span> <br>
+            <span class="negative">-10</span> : <span class="negative">(-5)</span> = <span class="positive">2</span>
+        </div>
+    </div>
+
+    <p style="color: #7f8c8d; font-size: 14px; margin-top: 20px;">
+        <i>* Подсказка: При умножении и делении четное количество минусов превращается в плюс, а нечетное — остается минусом.</i>
+    </p>
+</body>
+</html>
