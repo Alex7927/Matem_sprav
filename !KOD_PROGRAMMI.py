@@ -21,8 +21,6 @@
 # Ввод всех библиотек для выполнения работы программы
 import sys
 
-import os
-
 import sqlite3
 
 import random
@@ -239,9 +237,9 @@ class math_spravochnik(QMainWindow):
         grid = QGridLayout()
         classes = [
             ("1 Класс", {"ops": [0, 1], "min": 1, "max": 10, "frac": False}),
-            ("2-4 Класс", {"ops": [0, 1, 2], "min": 1, "max": 50, "frac": False}),
-            ("5 Класс", {"ops": [0, 1, 2, 3], "min": 1, "max": 100, "frac": True}),
-            ("6-8 Класс", {"ops": [0, 1, 2, 3], "min": -50, "max": 50, "frac": True, "dec": True}),
+            ("2-4 Класс", {"ops": [0, 1, 2], "min": 1, "max": 20, "frac": False}),
+            ("5-6 Класс", {"ops": [0, 1, 2, 3], "min": 1, "max": 25, "frac": True}),
+            ("7-8 Класс", {"ops": [0, 1, 2, 3], "min": -35, "max": 35, "frac": True, "dec": True}),
         ]
 
         for i, (name, presets) in enumerate(classes):
@@ -416,8 +414,8 @@ class math_spravochnik(QMainWindow):
         main_layout = QVBoxLayout(page)
         main_layout.setContentsMargins(40, 20, 40, 20)
 
-        knopka_na_vihod = QPushButton("Назад в меню")
-        knopka_na_vihod.clicked.connect(self.vozvrashenie_v_menu)
+        knopka_na_vihod = QPushButton("Назад к выбору сложности")
+        knopka_na_vihod.clicked.connect(lambda: self.sbornik_layoutov.setCurrentIndex(5)); 
         main_layout.addWidget(knopka_na_vihod, alignment=Qt.AlignmentFlag.AlignLeft)
         
         title = QLabel("Настройки тренировки")
@@ -443,12 +441,18 @@ class math_spravochnik(QMainWindow):
 
         types_frame = QFrame()
         types_frame.setStyleSheet("background: #dddfff; border-radius: 10px; padding: 15px;")
-        types_layout = QVBoxLayout(types_frame)
+        types_layout = QHBoxLayout(types_frame)
+
+        first_layout = QVBoxLayout()
+        second_layout = QVBoxLayout()
+        types_layout.addLayout(first_layout)
+        types_layout.addLayout(second_layout)
         stroka = QLabel("<b>2. Настройка чисел и сложности:</b>")
         stroka.setFixedHeight(50);
-        types_layout.addWidget(stroka)
+        first_layout.addWidget(stroka)
+        range_lay = QVBoxLayout()
+        two_range_lay = QVBoxLayout()
 
-        range_lay = QHBoxLayout()
         range_lay.addWidget(QLabel("Целые числа:"))
         _, self.range_min = self.create_small_input("от", "1")
         _, self.range_max = self.create_small_input("до", "10")
@@ -462,34 +466,34 @@ class math_spravochnik(QMainWindow):
             rb = QRadioButton(text); rb.setChecked(i==0)
             self.diff_group.addButton(rb, i); range_lay2.addWidget(rb)
         range_lay2.addItem(spacer)
-        types_layout.addLayout(range_lay)
-        types_layout.addLayout(range_lay2)
+        first_layout.addLayout(range_lay)
+        first_layout.addLayout(range_lay2)
 
         frac_lay = QHBoxLayout()
         self.cb_frac = QCheckBox("Обыкновенные дроби")
         frac_lay.addWidget(self.cb_frac)
         _, self.max_denom = self.create_small_input("Макс. знаменатель:", "10")
         frac_lay.addLayout(_)
-        types_layout.addLayout(frac_lay)
+        second_layout.addLayout(frac_lay)
 
         dec_lay = QHBoxLayout()
         self.cb_decimal = QCheckBox("Десятичные дроби")
         dec_lay.addWidget(self.cb_decimal)
         _, self.dec_precision = self.create_small_input("Знаков:", "1")
         dec_lay.addLayout(_)
-        types_layout.addLayout(dec_lay)
+        second_layout.addLayout(dec_lay)
         main_layout.addWidget(types_frame)
 
         bottom_grid = QGridLayout()
         pos_box = QFrame(); pos_box.setStyleSheet("background: #dddfff; border-radius: 10px; padding: 10px;")
-        pos_lay = QVBoxLayout(pos_box); pos_lay.addWidget(QLabel("<b>3. Позиция X:</b>"))
+        pos_lay = QHBoxLayout(pos_box); pos_lay.addWidget(QLabel("<b>3. Позиция X:</b>"))
         self.pos_group = QButtonGroup(self)
         rb_rand = QRadioButton("Случайная"); rb_rand.setChecked(True)
         rb_classic = QRadioButton("Классика"); self.pos_group.addButton(rb_rand, 0); self.pos_group.addButton(rb_classic, 1)
         pos_lay.addWidget(rb_rand); pos_lay.addWidget(rb_classic); bottom_grid.addWidget(pos_box, 0, 0)
 
         limit_box = QFrame(); limit_box.setStyleSheet("background: #dddfff; border-radius: 10px; padding: 10px;")
-        limit_lay = QVBoxLayout(limit_box); limit_lay.addWidget(QLabel("<b>4. Лимит:</b>"))
+        limit_lay = QHBoxLayout(limit_box); limit_lay.addWidget(QLabel("<b>4. Лимит:</b>"))
         _, self.limit_input = self.create_small_input("Примеров:", "10"); limit_lay.addLayout(_)
         bottom_grid.addWidget(limit_box, 0, 1)
         main_layout.addLayout(bottom_grid)
